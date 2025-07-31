@@ -18,7 +18,7 @@ export interface TimeSlot {
 export const timetableData: TimeSlot[] = [
   {
     time: "08.00-08.55",
-    monday: [{ type: "L", code: "CSO-101", batch: "Batch 1", faculty: "Manoj Mishra", location: "APJ AKB-206" }],
+    monday: [{ type: "T", code: "CSO-101", batch: "Batch 1", faculty: "Manoj Mishra", location: "APJ AKB-206" }],
     tuesday: [],
     wednesday: [{ type: "L", code: "CSO-101", batch: "Batch 1", faculty: "Manoj Mishra", location: "APJ AKB-206" }],
     thursday: [],
@@ -27,8 +27,7 @@ export const timetableData: TimeSlot[] = [
   {
     time: "09.00-09.55",
     monday: [
-      { type: "T", code: "MAL-545", batch: "Batch 1", location: "GB-314" },
-      { type: "T", code: "MAL-545", batch: "Batch 1", location: "GB-314" },
+      { type: "T", code: "MAL-545", batch: "Batch 1", location: "GB-314", faculty: "Chaman Kumar" }
     ],
     tuesday: [],
     wednesday: [],
@@ -38,27 +37,10 @@ export const timetableData: TimeSlot[] = [
   {
     time: "10.00-10.55",
     monday: [
-      { type: "T", code: "MAL-545", batch: "Batch 2" },
-      { type: "T", code: "MAL-545", batch: "Batch 2" },
+      { type: "T", code: "MAL-545", batch: "Batch 2", location: "GB-314" , faculty: "Chaman Kumar" }
     ],
-    tuesday: [{ type: "T", code: "MAC-301", batch: "MA1MA2", faculty: "Maheshanand", location: "GB-206" }],
-    wednesday: [{ type: "T", code: "MAC-351", batch: "MA1MA2", faculty: "Chaman Kumar", location: "GB-104" }],
-    thursday: [],
-    friday: [],
-  },
-  {
-    time: "11.05-12.00",
-    monday: [{ type: "T", code: "MAL-544", batch: "Batch 1", faculty: "Aditi Gangopadhyay", location: "APJ AKB-602" }],
-    tuesday: [],
-    wednesday: [{ type: "T", code: "MAL-415", batch: "Batch 1", faculty: "Sanjeev Kumar", location: "GB-101" }],
-    thursday: [],
-    friday: [],
-  },
-  {
-    time: "12.05-13.00",
-    monday: [{ type: "T", code: "MAL-544", batch: "Batch 2", location: "APJ AKB-602" }],
-    tuesday: [],
-    wednesday: [],
+    tuesday: [{ type: "T", code: "MAC-301", batch: "MA1, MA2", faculty: "Maheshanand", location: "GB-206" }],
+    wednesday: [{ type: "T", code: "MAC-351", batch: "MA1, MA2", faculty: "Chaman Kumar", location: "GB-104" }],
     thursday: [],
     friday: [],
   },
@@ -72,10 +54,10 @@ export const timetableData: TimeSlot[] = [
   },
   {
     time: "14.00-14.55",
-    monday: [{ type: "L", code: "MAT-105", batch: "Batch 1", faculty: "Aditi Gangopadhyay" }],
-    tuesday: [{ type: "L", code: "MAT-105", batch: "Batch 1", faculty: "Aditi Gangopadhyay" }],
+    monday: [{ type: "L", code: "MAT-105", batch: "Batch 1", faculty: "Aditi Gangopadhyay", location: "GB-006" }],
+    tuesday: [{ type: "L", code: "MAT-105", batch: "Batch 1", faculty: "Aditi Gangopadhyay", location: "GB-006" }],
     wednesday: [{ type: "L", code: "MAL-545", batch: "Batch 1", faculty: "Chaman Kumar", location: "GB-201" }],
-    thursday: [{ type: "L", code: "MAT-105", batch: "Batch 1", faculty: "Aditi Gangopadhyay" }],
+    thursday: [{ type: "L", code: "MAT-105", batch: "Batch 1", faculty: "Aditi Gangopadhyay", location: "GB-006" }],
     friday: [{ type: "L", code: "MAL-545", batch: "Batch 1", faculty: "Chaman Kumar", location: "GB-201" }],
   },
   {
@@ -93,22 +75,6 @@ export const timetableData: TimeSlot[] = [
     wednesday: [],
     thursday: [{ type: "L", code: "MAC-351", batch: "Batch 1", faculty: "Chaman Kumar", location: "GB-204" }],
     friday: [{ type: "L", code: "MAC-351", batch: "Batch 1", faculty: "Chaman Kumar", location: "GB-204" }],
-  },
-  {
-    time: "17.05-18.00",
-    monday: [],
-    tuesday: [],
-    wednesday: [],
-    thursday: [],
-    friday: [],
-  },
-  {
-    time: "18.05-19.00",
-    monday: [],
-    tuesday: [],
-    wednesday: [],
-    thursday: [],
-    friday: [],
   },
 ]
 
@@ -162,17 +128,6 @@ export const courseDetailsData: CourseDetail[] = [
     semester: "Third Year - 1st Sem (Autumn)",
     programName: "BS-MS (MATHEMATICS AND COMPUTING)",
     subBatch: "MA1",
-    subjectArea: "CORE",
-    subjectCodeSlot: "MAC-399 []",
-    subjectName: "Community Outreach",
-    lectureHallNo: "",
-    facultyName: "Chaman Kumar",
-    credit: 2,
-  },
-  {
-    semester: "Third Year - 1st Sem (Autumn)",
-    programName: "BS-MS (MATHEMATICS AND COMPUTING)",
-    subBatch: "MA1",
     subjectArea: "PEC",
     subjectCodeSlot: "MAL-545 [F2]",
     subjectName: "Stochastic Differential Equations",
@@ -187,7 +142,7 @@ export const courseDetailsData: CourseDetail[] = [
     subjectArea: "TEB",
     subjectCodeSlot: "MAT-105 [A2]",
     subjectName: "Financial Mathematics",
-    lectureHallNo: "",
+    lectureHallNo: "GB-006",
     facultyName: "Aditi Gangopadhyay",
     credit: 4,
   },

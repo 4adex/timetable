@@ -1,13 +1,15 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { timetableData, courseDetailsData, type CourseEvent } from "@/lib/data"
+import Link from "next/link"
 
 export default function TimetablePage() {
   const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 
   const renderCourseEvent = (event: CourseEvent) => (
     <div key={`${event.code}-${event.batch}-${event.location}`} className="text-sm leading-tight">
-      <span className={`font-medium ${event.type === "L" ? "text-ctp-lavender" : "text-ctp-green"}`}>
+      <span className="font-medium">
         {event.type} {event.code} {event.batch}
       </span>
       {event.faculty && <span className="block text-muted-foreground">{event.faculty}</span>}
@@ -17,7 +19,14 @@ export default function TimetablePage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground p-4 sm:p-6 lg:p-8">
-      <h1 className="text-3xl sm:text-4xl font-bold text-foreground text-center mb-8">University Timetable</h1>
+      <div className="flex justify-between items-center mb-8">
+        <h1 className="text-3xl sm:text-4xl font-bold text-foreground">Timetable</h1>
+        <Link href="/today">
+          <Button variant="outline" size="lg">
+            Today's Classes
+          </Button>
+        </Link>
+      </div>
 
       <Card className="mb-8 bg-card border-border">
         <CardHeader className="bg-muted/20 border-b border-border">
@@ -72,9 +81,6 @@ export default function TimetablePage() {
           <Table className="min-w-full table-auto">
             <TableHeader className="bg-muted/30">
               <TableRow className="border-b border-border">
-                <TableHead className="text-foreground font-bold min-w-[150px]">Semester</TableHead>
-                <TableHead className="text-foreground font-bold min-w-[200px]">Program Name</TableHead>
-                <TableHead className="text-foreground font-bold min-w-[100px]">Sub Batch</TableHead>
                 <TableHead className="text-foreground font-bold min-w-[120px]">Subject Area</TableHead>
                 <TableHead className="text-foreground font-bold min-w-[150px]">Subject Code & Slot</TableHead>
                 <TableHead className="text-foreground font-bold min-w-[200px]">Subject Name</TableHead>
@@ -89,9 +95,6 @@ export default function TimetablePage() {
                   key={detail.subjectCodeSlot}
                   className={`border-b border-border ${index % 2 === 0 ? "bg-card" : "bg-background"}`}
                 >
-                  <TableCell className="text-sm text-foreground">{detail.semester}</TableCell>
-                  <TableCell className="text-sm text-foreground">{detail.programName}</TableCell>
-                  <TableCell className="text-sm text-foreground">{detail.subBatch}</TableCell>
                   <TableCell className="text-sm text-foreground">{detail.subjectArea}</TableCell>
                   <TableCell className="text-sm text-foreground">{detail.subjectCodeSlot}</TableCell>
                   <TableCell className="text-sm text-foreground">{detail.subjectName}</TableCell>
