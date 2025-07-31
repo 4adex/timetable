@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* White for light mode fallback */
+    --foreground: 222.2 84% 4.9%; /* Black for light mode fallback */
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Catppuccin Mocha Dark Palette */
+    --background: 240 17% 15%; /* Base: #1E1E2E */
+    --foreground: 225 30% 91%; /* Text: #CDD6F4 */
+
+    --card: 235 15% 23%; /* Surface0: #313244 */
+    --card-foreground: 225 30% 91%; /* Text: #CDD6F4 */
+
+    --popover: 235 15% 23%; /* Surface0: #313244 */
+    --popover-foreground: 225 30% 91%; /* Text: #CDD6F4 */
+
+    --primary: 230 97% 85%; /* Lavender: #B4BEFE */
+    --primary-foreground: 240 17% 15%; /* Base: #1E1E2E */
+
+    --secondary: 232 13% 31%; /* Surface1: #45475A */
+    --secondary-foreground: 225 30% 91%; /* Text: #CDD6F4 */
+
+    --muted: 228 11% 47%; /* Overlay0: #6C7086 */
+    --muted-foreground: 225 19% 72%; /* Subtext0: #A6ADC8 */
+
+    --accent: 230 97% 85%; /* Lavender: #B4BEFE */
+    --accent-foreground: 240 17% 15%; /* Base: #1E1E2E */
+
+    --destructive: 0 72% 51%; /* Default red, or a Catppuccin red if preferred */
+    --destructive-foreground: 210 20% 98%; /* Default white */
+
+    --border: 232 13% 31%; /* Surface1: #45475A */
+    --input: 232 13% 31%; /* Surface1: #45475A */
+    --ring: 230 97% 85%; /* Lavender: #B4BEFE */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
