@@ -48,7 +48,7 @@ export default function TimetablePage() {
           <Table className="min-w-[900px] table-fixed">
             <TableHeader className="bg-muted/30">
               <TableRow className="border-b border-border">
-                <TableHead className="w-[120px] sm:w-[150px] text-foreground font-bold sticky left-0 bg-muted/30 z-10">
+                <TableHead className="w-[120px] sm:w-[150px] text-foreground font-bold sticky left-0 bg-muted z-10">
                   Time/Day
                 </TableHead>
                 {days.map((day) => (

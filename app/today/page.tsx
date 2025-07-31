@@ -91,7 +91,7 @@ export default function TodayPage() {
             </div>
             <Link href="/">
               <Button variant="outline" size="lg">
-                View Complete Timetable
+                Timetable
               </Button>
             </Link>
           </div>
