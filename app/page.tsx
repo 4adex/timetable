@@ -7,15 +7,27 @@ import Link from "next/link"
 export default function TimetablePage() {
   const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 
-  const renderCourseEvent = (event: CourseEvent) => (
-    <div key={`${event.code}-${event.batch}-${event.location}`} className="text-sm leading-tight">
-      <span className="font-medium">
-        {event.type} {event.code} {event.batch}
-      </span>
-      {event.faculty && <span className="block text-muted-foreground">{event.faculty}</span>}
-      {event.location && <span className="block text-muted-foreground">{event.location}</span>}
-    </div>
-  )
+  const renderCourseEvent = (event: CourseEvent) => {
+    // Color coding based on event type
+    const typeStyles = event.type === "T" 
+      ? "bg-blue-50 border-blue-200 text-blue-900 dark:bg-blue-950 dark:border-blue-800 dark:text-blue-100" 
+      : "bg-green-50 border-green-200 text-green-900 dark:bg-green-950 dark:border-green-800 dark:text-green-100"
+    
+    const typeLabel = event.type === "T" ? "Tutorial" : "Lecture"
+    
+    return (
+      <div 
+        key={`${event.code}-${event.batch}-${event.location}`} 
+        className={`text-sm leading-tight p-2 rounded-md border-2 ${typeStyles} mb-1`}
+      >
+        <span className="font-medium block">
+          {typeLabel} {event.code} {event.batch}
+        </span>
+        {event.faculty && <span className="block text-xs opacity-80">{event.faculty}</span>}
+        {event.location && <span className="block text-xs opacity-80">{event.location}</span>}
+      </div>
+    )
+  }
 
   return (
     <div className="min-h-screen bg-background text-foreground p-4 sm:p-6 lg:p-8">
