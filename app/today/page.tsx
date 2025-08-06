@@ -100,25 +100,37 @@ export default function TodayPage() {
     )
   }
 
-  const renderCourseEvent = (event: CourseEvent) => (
-    <div key={`${event.code}-${event.batch}-${event.location}`} className="space-y-1">
-      <div className="flex items-center justify-between">
-        <span className="font-semibold text-lg">
-          {event.type} {event.code} {event.batch}
-        </span>
+  const renderCourseEvent = (event: CourseEvent) => {
+    // Color coding based on event type
+    const typeStyles = event.type === "T" 
+      ? "bg-blue-50 border-blue-200 text-blue-900" 
+      : "bg-green-50 border-green-200 text-green-900"
+    
+    const typeLabel = event.type === "T" ? "Tutorial" : "Lecture"
+    
+    return (
+      <div 
+        key={`${event.code}-${event.batch}-${event.location}`} 
+        className={`p-4 rounded-lg border-2 ${typeStyles}`}
+      >
+        <div className="flex items-center justify-between mb-2">
+          <span className="font-semibold text-lg">
+            {typeLabel} {event.code} {event.batch}
+          </span>
+        </div>
+        {event.faculty && (
+          <p className="text-sm opacity-80 mb-1">
+            <span className="font-medium">Faculty:</span> {event.faculty}
+          </p>
+        )}
+        {event.location && (
+          <p className="text-sm opacity-80">
+            <span className="font-medium">Location:</span> {event.location}
+          </p>
+        )}
       </div>
-      {event.faculty && (
-        <p className="text-sm text-muted-foreground">
-          <span className="font-medium">Faculty:</span> {event.faculty}
-        </p>
-      )}
-      {event.location && (
-        <p className="text-sm text-muted-foreground">
-          <span className="font-medium">Location:</span> {event.location}
-        </p>
-      )}
-    </div>
-  )
+    )
+  }
 
   return (
     <div className="min-h-screen bg-background text-foreground p-4 sm:p-6 lg:p-8">

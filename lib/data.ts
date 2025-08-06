@@ -18,7 +18,7 @@ export interface TimeSlot {
 export const timetableData: TimeSlot[] = [
   {
     time: "08.00-08.55",
-    monday: [{ type: "T", code: "CSO-101", batch: "Batch 1", faculty: "Manoj Mishra", location: "APJ AKB-206" }],
+    monday: [],
     tuesday: [],
     wednesday: [{ type: "L", code: "CSO-101", batch: "Batch 1", faculty: "Manoj Mishra", location: "APJ AKB-206" }],
     thursday: [],
@@ -26,9 +26,7 @@ export const timetableData: TimeSlot[] = [
   },
   {
     time: "09.00-09.55",
-    monday: [
-      { type: "T", code: "MAL-545", batch: "Batch 1", location: "GB-314", faculty: "Chaman Kumar" }
-    ],
+    monday: [],
     tuesday: [],
     wednesday: [],
     thursday: [],
@@ -40,7 +38,7 @@ export const timetableData: TimeSlot[] = [
       { type: "T", code: "MAL-545", batch: "Batch 2", location: "GB-314" , faculty: "Chaman Kumar" }
     ],
     tuesday: [{ type: "T", code: "MAC-301", batch: "MA1, MA2", faculty: "Maheshanand", location: "GB-206" }],
-    wednesday: [{ type: "T", code: "MAC-351", batch: "MA1, MA2", faculty: "Chaman Kumar", location: "GB-104" }],
+    wednesday: [],
     thursday: [],
     friday: [],
   },

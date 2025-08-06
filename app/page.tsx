@@ -10,8 +10,8 @@ export default function TimetablePage() {
   const renderCourseEvent = (event: CourseEvent) => {
     // Color coding based on event type
     const typeStyles = event.type === "T" 
-      ? "bg-blue-50 border-blue-200 text-blue-900 dark:bg-blue-950 dark:border-blue-800 dark:text-blue-100" 
-      : "bg-green-50 border-green-200 text-green-900 dark:bg-green-950 dark:border-green-800 dark:text-green-100"
+      ? "bg-blue-50 border-blue-200 text-blue-900" 
+      : "bg-green-50 border-green-200 text-green-900"
     
     const typeLabel = event.type === "T" ? "Tutorial" : "Lecture"
     
