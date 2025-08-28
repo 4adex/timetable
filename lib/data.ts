@@ -72,7 +72,7 @@ export const timetableData: TimeSlot[] = [
     tuesday: [],
     wednesday: [],
     thursday: [{ type: "L", code: "MAC-351", batch: "Batch 1", faculty: "Chaman Kumar", location: "GB-204" }],
-    friday: [{ type: "L", code: "MAC-351", batch: "Batch 1", faculty: "Chaman Kumar", location: "GB-204" }],
+    friday: [],
   },
 ]
 
