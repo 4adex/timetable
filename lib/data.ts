@@ -20,9 +20,9 @@ export const timetableData: TimeSlot[] = [
     time: "08.00-08.55",
     monday: [],
     tuesday: [],
-    wednesday: [{ type: "L", code: "CSO-101", batch: "Batch 1", faculty: "Manoj Mishra", location: "APJ AKB-206" }],
+    wednesday: [],
     thursday: [],
-    friday: [{ type: "L", code: "CSO-101", batch: "Batch 1", faculty: "Manoj Mishra", location: "APJ AKB-206" }],
+    friday: [],
   },
   {
     time: "09.00-09.55",
@@ -30,7 +30,7 @@ export const timetableData: TimeSlot[] = [
     tuesday: [],
     wednesday: [],
     thursday: [],
-    friday: [{ type: "T", code: "CSO-101", batch: "Batch 1", faculty: "Manoj Mishra", location: "APJ AKB-206" }],
+    friday: [],
   },
   {
     time: "10.00-10.55",
@@ -68,7 +68,7 @@ export const timetableData: TimeSlot[] = [
   },
   {
     time: "16.05-17.00",
-    monday: [{ type: "L", code: "MAC-351", batch: "Batch 1", faculty: "Chaman Kumar", location: "GB-204" }],
+    monday: [],
     tuesday: [],
     wednesday: [],
     thursday: [{ type: "L", code: "MAC-351", batch: "Batch 1", faculty: "Chaman Kumar", location: "GB-204" }],
@@ -89,17 +89,6 @@ export interface CourseDetail {
 }
 
 export const courseDetailsData: CourseDetail[] = [
-  {
-    semester: "Third Year - 1st Sem (Autumn)",
-    programName: "BS-MS (MATHEMATICS AND COMPUTING)",
-    subBatch: "MA1",
-    subjectArea: "OEC",
-    subjectCodeSlot: "CSO-101 [X]",
-    subjectName: "System Software",
-    lectureHallNo: "APJ AKB-206",
-    facultyName: "Manoj Mishra",
-    credit: 3,
-  },
   {
     semester: "Third Year - 1st Sem (Autumn)",
     programName: "BS-MS (MATHEMATICS AND COMPUTING)",
